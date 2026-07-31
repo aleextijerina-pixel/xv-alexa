@@ -51,15 +51,12 @@ html{
 
 body{
     font-family:'Cormorant Garamond', serif;
-
-    background-image: url("background.jpg");
-    background-repeat: repeat-y;
-    background-position: center top;
-    background-size: 100% auto;
-    background-attachment: scroll;
-
     color: var(--text);
-    overflow-x: hidden;
+    overflow-x:hidden;
+
+    background:#132c5a url("./background.jpg") no-repeat center top;
+    background-size:cover;
+    background-attachment:fixed;
 }
 
 /*==================================================
