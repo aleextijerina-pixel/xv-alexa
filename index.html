@@ -1,109 +1,175 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XV Años | Alexa Marlen</title>
 
-    <meta name="theme-color" content="#7FA5C9">
+<meta charset="UTF-8">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<title>XV Años | Alexa Marlen</title>
 
-    <link rel="stylesheet" href="style.css">
+<meta name="theme-color" content="#0B1F3A">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
+<!-- ==========================
+      PANTALLA DE CARGA
+=========================== -->
+
 <div id="loader">
-    <div class="loader-content">
-        <div class="loader-ring"></div>
-        <h2>Cargando Invitación...</h2>
-    </div>
+
+<div class="loader-content">
+
+<div class="loader-circle"></div>
+
+<h2>Cargando invitación...</h2>
+
 </div>
 
-<!-- SOBRE -->
+</div>
+
+<!-- ==========================
+      SOBRE
+=========================== -->
 
 <section id="welcome">
 
-<div class="overlay"></div>
+<div class="background-stars"></div>
 
-<div class="envelope-container">
+<div class="welcome-content">
 
 <h3>Alexa Marlen</h3>
 
 <p>Mis XV Años</p>
 
-<div class="envelope" id="openInvitation">
+<div id="envelope">
 
 <div class="envelope-back"></div>
 
-<div class="envelope-letter">
+<div class="letter">
+
+<span class="seal">AM</span>
+
 <h2>Invitación</h2>
+
 <p>Haz clic para abrir</p>
+
 </div>
 
 <div class="envelope-front"></div>
 
-<div class="wax-seal"></div>
-
 </div>
 
-</div>
+<p class="tap-text">
 
-</section>
-
-<!-- INVITACIÓN -->
-
-<main id="invitation">
-
-<header class="hero">
-
-<div class="hero-content">
-
-<span class="crown">👑</span>
-
-<h1>Alexa Marlen</h1>
-
-<h2>Mis XV Años</h2>
-
-<p>
-
-"Hay momentos inolvidables que se atesoran en el corazón para siempre.
-
-Con la bendición de Dios y el amor de mis padres,
-
-quiero compartir contigo este día tan especial."
+Toca el sobre para abrir la invitación
 
 </p>
 
 </div>
 
-</header>
+</section>
 
-<!-- PADRES -->
+<!-- ==========================
+      INVITACIÓN
+=========================== -->
 
-<section class="section">
+<main id="invitation">
 
-<h2>Con la bendición de Dios y el amor de mis padres</h2>
+<header class="hero">
 
-<div class="parents">
+<div class="hero-overlay"></div>
 
-<div>
+<div class="hero-content">
 
-<h3>Papá</h3>
+<div class="crown">
 
-<p>Braulio Reyes Rodríguez</p>
+👑
 
 </div>
 
-<div>
+<h1>
+
+Alexa Marlen
+
+</h1>
+
+<h2>
+
+Mis XV Años
+
+</h2>
+
+<p>
+
+Hay momentos inolvidables que permanecen para siempre en el corazón.
+
+Con la bendición de Dios y el amor de mis padres,
+
+quiero compartir contigo este día tan especial.
+
+</p>
+
+<button id="musicButton">
+
+🎵 Reproducir música
+
+</button>
+
+<audio id="music" loop>
+
+<source src="audio/musica.mp3" type="audio/mpeg">
+
+</audio>
+
+</div>
+
+</header>
+
+<!-- ==========================
+      PADRES
+=========================== -->
+
+<section class="section">
+
+<h2>
+
+Con la bendición de Dios y el amor de mis padres
+
+</h2>
+
+<div class="parents">
+
+<div class="parent-card">
+
+<h3>Papá</h3>
+
+<p>
+
+Braulio Reyes Rodríguez
+
+</p>
+
+</div>
+
+<div class="parent-card">
 
 <h3>Mamá</h3>
 
-<p>Angélica Marlenne García Martínez</p>
+<p>
+
+Angélica Marlenne García Martínez
+
+</p>
 
 </div>
 
@@ -111,15 +177,21 @@ quiero compartir contigo este día tan especial."
 
 </section>
 
-<!-- CONTADOR -->
+<!-- ==========================
+      CONTADOR
+=========================== -->
 
-<section class="section countdown-section">
+<section class="section">
 
-<h2>Cuenta Regresiva</h2>
+<h2>
+
+Cuenta Regresiva
+
+</h2>
 
 <div class="countdown">
 
-<div class="time-box">
+<div class="box">
 
 <span id="days">00</span>
 
@@ -127,7 +199,7 @@ quiero compartir contigo este día tan especial."
 
 </div>
 
-<div class="time-box">
+<div class="box">
 
 <span id="hours">00</span>
 
@@ -135,7 +207,7 @@ quiero compartir contigo este día tan especial."
 
 </div>
 
-<div class="time-box">
+<div class="box">
 
 <span id="minutes">00</span>
 
@@ -143,7 +215,7 @@ quiero compartir contigo este día tan especial."
 
 </div>
 
-<div class="time-box">
+<div class="box">
 
 <span id="seconds">00</span>
 
@@ -154,76 +226,102 @@ quiero compartir contigo este día tan especial."
 </div>
 
 </section>
-
-<!-- CEREMONIA -->
-
-<section class="section">
-
-<h2>Ceremonia Religiosa</h2>
-
-<h3>Parroquia Santa Teresita del Niño Jesús</h3>
-
-<p>Viernes 18 de septiembre de 2026</p>
-
-<p>🕠 5:30 PM</p>
-
-<p>
-
-Calle Nogal, Col. Ébanos IV,
-
-Apodaca, Nuevo León.
-
-</p>
-
-<a class="button"
-target="_blank"
-href="https://www.google.com/maps/search/?api=1&query=Parroquia+Santa+Teresita+del+Niño+Jesús+Apodaca">
-Ver ubicación
-</a>
-
-</section>
-
-<!-- RECEPCIÓN -->
+<!-- ==========================
+      CEREMONIA
+=========================== -->
 
 <section class="section">
 
-<h2>Recepción</h2>
+    <h2>Ceremonia Religiosa</h2>
 
-<h3>Salón de Eventos</h3>
+    <div class="card">
 
-<p>🕖 7:00 PM</p>
+        <div class="icon">⛪</div>
 
-<p>
+        <h3>Parroquia Santa Teresita del Niño Jesús</h3>
 
-Ignacio Aldama 101
+        <p>Viernes 18 de septiembre de 2026</p>
 
-Cabecera Municipal
+        <p>5:30 PM</p>
 
-Apodaca Centro
+        <p>
+            Calle Nogal,<br>
+            Col. Ébanos IV,<br>
+            Apodaca, Nuevo León
+        </p>
 
-</p>
+        <a
+            class="button"
+            target="_blank"
+            href="https://maps.google.com/?q=Parroquia+Santa+Teresita+del+Niño+Jesús+Apodaca">
 
-<a class="button"
-target="_blank"
-href="https://www.google.com/maps/search/?api=1&query=Ignacio+Aldama+101+Apodaca+Nuevo+León">
+            Ver ubicación
 
-Cómo llegar
+        </a>
 
-</a>
+    </div>
 
 </section>
 
-<!-- DRESS CODE -->
+<!-- ==========================
+      RECEPCIÓN
+=========================== -->
+
+<section class="section">
+
+    <h2>Recepción</h2>
+
+    <div class="card">
+
+        <div class="icon">🎉</div>
+
+        <h3>Recepción</h3>
+
+        <p>7:00 PM</p>
+
+        <p>
+
+            Ignacio Aldama 101<br>
+
+            Cabecera Municipal<br>
+
+            Apodaca Centro
+
+        </p>
+
+        <a
+
+            class="button"
+
+            target="_blank"
+
+            href="https://maps.google.com/?q=Ignacio+Aldama+101+Apodaca">
+
+            Cómo llegar
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+      DRESS CODE
+=========================== -->
 
 <section class="section">
 
 <h2>Dress Code</h2>
 
-<div class="dress">
+<div class="dress-card">
 
-<div class="dress-icon">🤵👗</div>
+<div class="dress-icon">
 
-<p>Formal</p>
+🤵🏻 👗
+
+</div>
+
+<h3>Formal</h3>
 
 <p>
 
@@ -235,19 +333,19 @@ Tu elegancia hará aún más especial esta celebración.
 
 </section>
 
-<!-- SOBRE -->
+<!-- ==========================
+      LLUVIA DE SOBRES
+=========================== -->
 
 <section class="section">
 
 <h2>Lluvia de Sobres</h2>
 
-<div class="gift-envelope" id="giftEnvelope">
+<div id="giftEnvelope">
 
-<div class="gift-top"></div>
+<div class="gift-cover"></div>
 
-<div class="gift-bottom"></div>
-
-<div class="gift-card">
+<div class="gift-message">
 
 <h3>💌</h3>
 
@@ -255,21 +353,29 @@ Tu elegancia hará aún más especial esta celebración.
 
 Tu presencia es el mejor regalo.
 
+</p>
+
+<p>
+
 Si deseas tener un detalle conmigo,
 
-agradeceré con mucho cariño
+agradeceré recibirlo con mucho cariño
 
-tu obsequio en un sobre.
+en un sobre.
 
 </p>
 
-<strong>¡Gracias!</strong>
+<strong>
+
+¡Muchas gracias!
+
+</strong>
 
 </div>
 
 </div>
 
-<p class="tap">
+<p class="tap-text">
 
 Toca el sobre para abrirlo
 
@@ -277,33 +383,58 @@ Toca el sobre para abrirlo
 
 </section>
 
-<!-- RSVP -->
+<!-- ==========================
+      CONFIRMACIÓN
+=========================== -->
 
 <section class="section">
 
-<h2>Confirma tu asistencia</h2>
+<h2>
+
+Confirma tu asistencia
+
+</h2>
 
 <form id="rsvpForm">
 
 <input
+
 type="text"
+
 placeholder="Nombre completo"
+
 required>
 
 <select required>
 
-<option value="">¿Asistirás?</option>
+<option value="">
 
-<option>Sí asistiré</option>
+¿Asistirás?
 
-<option>No podré asistir</option>
+</option>
+
+<option>
+
+Sí asistiré
+
+</option>
+
+<option>
+
+No podré asistir
+
+</option>
 
 </select>
 
 <input
+
 type="number"
+
 placeholder="Número de acompañantes"
+
 min="0"
+
 max="10">
 
 <button type="submit">
@@ -316,29 +447,13 @@ Confirmar asistencia
 
 </section>
 
-<!-- MÚSICA -->
-
-<section class="section">
-
-<h2>Nuestra Canción</h2>
-
-<button id="musicButton">
-
-🎵 Reproducir Música
-
-</button>
-
-<audio id="music" loop>
-
-<source src="audio/musica.mp3" type="audio/mpeg">
-
-</audio>
-
-</section>
-
 <footer>
 
-<h2>Gracias por acompañarme</h2>
+<h2>
+
+Gracias por acompañarme
+
+</h2>
 
 <p>
 
@@ -350,7 +465,11 @@ de mi vida.
 
 </p>
 
-<h3>Alexa Marlen</h3>
+<h3>
+
+Alexa Marlen
+
+</h3>
 
 </footer>
 
@@ -359,4 +478,5 @@ de mi vida.
 <script src="script.js"></script>
 
 </body>
+
 </html>
