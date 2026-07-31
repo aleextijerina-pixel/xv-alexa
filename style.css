@@ -1,289 +1,1038 @@
-/*=========================================
+/*==================================================
+XV AÑOS | ALEXA MARLEN
+STYLE.CSS
+==================================================*/
+
+:root{
+
+    --blue1:#dfeaf7;
+    --blue2:#bfd4ea;
+    --blue3:#7d9bc6;
+    --blue4:#49688f;
+
+    --gold:#d6b36d;
+    --white:#ffffff;
+
+    --glass:rgba(255,255,255,.35);
+
+    --shadow:0 20px 60px rgba(0,0,0,.12);
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Cormorant Garamond',serif;
+    color:#334;
+    overflow-x:hidden;
+
+    background:
+    linear-gradient(180deg,#edf5ff 0%,#dce8f5 35%,#c9dced 70%,#b7cfe6 100%);
+
+}
+
+/*==================================================
+GLITTER
+==================================================*/
+
+#glitter{
+
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:1;
+
+}
+
+#glitter::before,
+#glitter::after{
+
+    content:"";
+    position:absolute;
+    width:200%;
+    height:200%;
+    left:-50%;
+    top:-50%;
+
+    background-image:
+
+    radial-gradient(circle,#ffffff 1px,transparent 2px),
+    radial-gradient(circle,#d6b36d 1px,transparent 2px);
+
+    background-size:80px 80px,120px 120px;
+
+    opacity:.35;
+
+    animation:glitterMove 35s linear infinite;
+
+}
+
+#glitter::after{
+
+    animation-duration:55s;
+    opacity:.18;
+
+}
+
+@keyframes glitterMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(220px);
+
+    }
+
+}
+
+/*==================================================
+PORTADA
+==================================================*/
+
+#cover{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+
+    linear-gradient(180deg,#88a8cf,#5d7ea7);
+
+    z-index:1000;
+
+    transition:1s;
+
+}
+
+#cover.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at center,
+
+    rgba(255,255,255,.18),
+
+    transparent 70%);
+
+}
+/*==================================================
+SOBRE
+==================================================*/
+
+.envelope-container{
+
+    position:relative;
+    z-index:2;
+
+}
+
+#envelope{
+
+    position:relative;
+
+    width:360px;
+    height:240px;
+
+    cursor:pointer;
+
+    transition:.8s;
+
+}
+
+#envelope:hover{
+
+    transform:scale(1.03);
+
+}
+
+.envelope-body{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+    height:170px;
+
+    background:linear-gradient(180deg,#f9f9f9,#e7e7e7);
+
+    border-radius:0 0 12px 12px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.20);
+
+    overflow:hidden;
+
+}
+
+.envelope-body::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:
+
+    linear-gradient(135deg,transparent 49%,#dadada 50%),
+
+    linear-gradient(225deg,transparent 49%,#dadada 50%);
+
+}
+
+.envelope-top{
+
+    position:absolute;
+
+    top:0;
+
+    width:100%;
+    height:170px;
+
+    background:#efefef;
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+
+    transform-origin:top;
+
+    transition:.8s;
+
+    z-index:4;
+
+}
+
+.letter{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:20px;
+
+    transform:translateX(-50%);
+
+    width:88%;
+    height:185px;
+
+    background:white;
+
+    border-radius:8px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+
+    text-align:center;
+
+    padding:25px;
+
+    transition:.8s;
+
+    z-index:2;
+
+}
+
+.letter h4{
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:15px;
+
+    letter-spacing:4px;
+
+    color:#888;
+
+    margin-bottom:10px;
+
+    text-transform:uppercase;
+
+}
+
+.letter h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:72px;
+
+    color:var(--gold);
+
+    line-height:1;
+
+}
+
+.letter h2{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:46px;
+
+    color:var(--blue4);
+
+    margin-top:5px;
+
+}
+
+.letter p{
+
+    margin-top:12px;
+
+    font-size:20px;
+
+    color:#666;
+
+}
+
+#cover.open .envelope-top{
+
+    transform:rotateX(180deg);
+
+}
+
+#cover.open .letter{
+
+    bottom:130px;
+
+}
+/*==================================================
+INVITACIÓN
+==================================================*/
+
+#invitation{
+
+    position:relative;
+    z-index:2;
+
+    display:none;
+
+    animation:fadeUp 1.2s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:120px 25px 80px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    max-width:850px;
+
+    padding:60px 45px;
+
+    border-radius:32px;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:var(--shadow);
+
+}
+
+.xv-background{
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:300px;
+
+    font-weight:700;
+
+    color:rgba(214,179,109,.12);
+
+    user-select:none;
+
+    pointer-events:none;
+
+    z-index:0;
+
+}
+
+.hero-content>*{
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+.hero-content h2{
+
+    font-size:42px;
+
+    font-weight:400;
+
+    color:var(--blue4);
+
+    letter-spacing:3px;
+
+    margin-bottom:10px;
+
+}
+
+.hero-content h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:110px;
+
+    color:var(--blue4);
+
+    line-height:1;
+
+    margin-bottom:10px;
+
+}
+
+.hero-content h3{
+
+    font-size:34px;
+
+    font-weight:500;
+
+    color:#5c6d80;
+
+    margin-bottom:28px;
+
+}
+
+.divider{
+
+    width:130px;
+
+    height:2px;
+
+    margin:30px auto;
+
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+
+}
+
+.hero-content p{
+
+    font-size:28px;
+
+    line-height:1.7;
+
+    max-width:700px;
+
+    margin:auto;
+
+}
+
+.date-box{
+
+    margin:50px auto 0;
+
+    width:260px;
+
+    padding:30px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.55);
+
+    box-shadow:var(--shadow);
+
+}
+
+.date-box h4{
+
+    font-size:28px;
+
+    color:var(--blue4);
+
+    letter-spacing:2px;
+
+}
+
+.date-box h2{
+
+    font-size:78px;
+
+    color:var(--gold);
+
+    margin:10px 0;
+
+}
+
+.date-box h5{
+
+    font-size:28px;
+
+    font-weight:500;
+
+}
+/*==================================================
+SECCIONES
+==================================================*/
+
+.glass{
+
+    width:min(1000px,92%);
+
+    margin:80px auto;
+
+    padding:55px 45px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.40);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+}
+
+.glass h2{
+
+    font-size:56px;
+
+    color:var(--blue4);
+
+    font-weight:500;
+
+}
+
+/*==================================================
+PADRES
+==================================================*/
+
+.parents{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:40px;
+
+    margin-top:40px;
+
+}
+
+.parents div{
+
+    padding:30px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.35);
+
+}
+
+.parents h3{
+
+    font-size:32px;
+
+    color:var(--blue4);
+
+    margin-bottom:12px;
+
+}
+
+.parents p{
+
+    font-size:22px;
+
+}
+
+/*==================================================
+CONTADOR
+==================================================*/
+
+.countdown{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    margin-top:45px;
+
+}
+
+.countdown div{
+
+    padding:25px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,.45);
+
+}
+
+.countdown span{
+
+    display:block;
+
+    font-size:60px;
+
+    color:var(--gold);
+
+    font-weight:700;
+
+}
+
+.countdown small{
+
+    font-size:22px;
+
+    color:var(--blue4);
+
+}
+/*==================================================
 EVENTOS
-=========================================*/
+==================================================*/
 
 .event-card{
 
-max-width:650px;
+    max-width:650px;
+    margin:40px auto 0;
+    padding:35px;
 
-margin:40px auto 0;
+    border-radius:22px;
 
-padding:35px;
+    background:rgba(255,255,255,.45);
 
-border-radius:22px;
-
-background:rgba(255,255,255,.45);
-
-box-shadow:var(--shadow);
+    box-shadow:var(--shadow);
 
 }
 
 .event-icon{
 
-font-size:55px;
-
-margin-bottom:20px;
+    font-size:55px;
+    margin-bottom:20px;
 
 }
 
 .event-card h3{
 
-font-size:34px;
-
-color:#49688f;
-
-margin-bottom:20px;
+    font-size:34px;
+    color:var(--blue4);
+    margin-bottom:20px;
 
 }
 
 .event-card p{
 
-font-size:22px;
-
-line-height:1.8;
-
-margin-bottom:10px;
+    font-size:22px;
+    line-height:1.8;
+    margin-bottom:10px;
 
 }
 
-/*=========================================
-DRESS CODE
-=========================================*/
-
-.dress h1{
-
-font-size:70px;
-
-margin-bottom:15px;
-
-}
-
-.dress h3{
-
-font-size:34px;
-
-color:#49688f;
-
-margin-bottom:15px;
-
-}
-
-.dress p{
-
-font-size:22px;
-
-}
-
-/*=========================================
+/*==================================================
 BOTONES
-=========================================*/
+==================================================*/
 
 .btn,
 #musicButton{
 
-display:inline-block;
+    display:inline-block;
 
-margin-top:30px;
+    margin-top:30px;
 
-padding:16px 40px;
+    padding:16px 42px;
 
-border:none;
+    border:none;
 
-border-radius:50px;
+    border-radius:50px;
 
-background:linear-gradient(135deg,#7d9bc6,#4f6f98);
+    background:linear-gradient(135deg,var(--blue3),var(--blue4));
 
-color:#fff;
+    color:#fff;
 
-font-family:'Montserrat',sans-serif;
+    text-decoration:none;
 
-font-size:16px;
+    font-family:'Montserrat',sans-serif;
 
-font-weight:600;
+    font-size:16px;
 
-text-decoration:none;
+    font-weight:600;
 
-cursor:pointer;
+    cursor:pointer;
 
-transition:.35s;
+    transition:.35s;
 
-box-shadow:0 12px 30px rgba(79,111,152,.25);
+    box-shadow:0 12px 30px rgba(73,104,143,.25);
 
 }
 
 .btn:hover,
 #musicButton:hover{
 
-transform:translateY(-4px);
+    transform:translateY(-4px);
 
-box-shadow:0 18px 35px rgba(79,111,152,.35);
+    box-shadow:0 18px 40px rgba(73,104,143,.35);
 
 }
 
 .whatsapp{
 
-background:linear-gradient(135deg,#25D366,#128C7E);
+    background:linear-gradient(135deg,#25D366,#128C7E);
 
 }
 
-/*=========================================
+/*==================================================
+DRESS CODE
+==================================================*/
+
+.dress h1{
+
+    font-size:72px;
+    margin-bottom:15px;
+
+}
+
+.dress h3{
+
+    font-size:34px;
+    color:var(--blue4);
+    margin-bottom:15px;
+
+}
+
+.dress p{
+
+    font-size:22px;
+    line-height:1.8;
+
+}
+
+/*==================================================
 LLUVIA DE SOBRES
-=========================================*/
+==================================================*/
 
 #giftBox{
 
-max-width:520px;
+    max-width:540px;
 
-margin:40px auto;
+    margin:40px auto 0;
 
-padding:35px;
+    padding:35px;
 
-border-radius:24px;
+    border-radius:24px;
 
-background:rgba(255,255,255,.45);
+    background:rgba(255,255,255,.45);
 
-box-shadow:var(--shadow);
-
-transition:.4s;
-
-}
-
-#giftBox:hover{
-
-transform:translateY(-6px);
+    box-shadow:var(--shadow);
 
 }
 
 #giftBox h1{
 
-font-size:70px;
-
-margin-bottom:15px;
+    font-size:72px;
+    margin-bottom:15px;
 
 }
 
 #giftBox p{
 
-font-size:22px;
-
-line-height:1.8;
+    font-size:22px;
+    line-height:1.8;
 
 }
 
-/*=========================================
+/*==================================================
 FOOTER
-=========================================*/
+==================================================*/
 
 footer{
 
-padding:80px 20px;
+    text-align:center;
 
-text-align:center;
+    padding:80px 20px;
 
 }
 
 footer p{
 
-font-size:24px;
-
-margin-bottom:20px;
+    font-size:24px;
+    margin-bottom:20px;
 
 }
 
 footer h2{
 
-font-family:'Great Vibes',cursive;
+    font-family:'Great Vibes',cursive;
 
-font-size:70px;
+    font-size:72px;
 
-color:#49688f;
+    color:var(--blue4);
 
 }
-
-/*=========================================
+/*==================================================
 RESPONSIVE
-=========================================*/
+==================================================*/
 
-@media (max-width:768px){
+@media (max-width:900px){
 
-.hero-content h1{
+    .parents{
 
-font-size:72px;
+        grid-template-columns:1fr;
 
-}
+    }
 
-.hero-content h3{
+    .countdown{
 
-font-size:26px;
+        grid-template-columns:repeat(2,1fr);
 
-}
+    }
 
-.hero-content p{
+    .hero-content{
 
-font-size:20px;
+        padding:45px 28px;
 
-}
+    }
 
-.xv-background{
+    .hero-content h1{
 
-font-size:180px;
+        font-size:78px;
 
-}
+    }
 
-.glass{
+    .hero-content h2{
 
-padding:30px 20px;
+        font-size:34px;
 
-}
+    }
 
-.glass h2{
+    .hero-content h3{
 
-font-size:46px;
+        font-size:26px;
 
-}
+    }
 
-.countdown{
+    .hero-content p{
 
-grid-template-columns:repeat(2,1fr);
+        font-size:22px;
 
-}
+    }
 
-.countdown span{
+    .xv-background{
 
-font-size:42px;
+        font-size:180px;
 
-}
+    }
 
-.event-card h3{
+    .glass{
 
-font-size:28px;
+        padding:40px 25px;
 
-}
+    }
 
-.event-card p{
+    .glass h2{
 
-font-size:18px;
+        font-size:42px;
 
-}
-
-#envelope{
-
-width:280px;
-
-height:190px;
+    }
 
 }
 
-.letter h1{
+@media (max-width:600px){
 
-font-size:55px;
+    #envelope{
 
-}
+        width:290px;
+        height:195px;
 
-.letter h2{
+    }
 
-font-size:42px;
+    .letter{
 
-}
+        height:170px;
+
+    }
+
+    .letter h1{
+
+        font-size:58px;
+
+    }
+
+    .letter h2{
+
+        font-size:40px;
+
+    }
+
+    .hero{
+
+        padding:90px 18px 50px;
+
+    }
+
+    .hero-content h1{
+
+        font-size:64px;
+
+    }
+
+    .hero-content h2{
+
+        font-size:28px;
+
+    }
+
+    .hero-content h3{
+
+        font-size:22px;
+
+    }
+
+    .hero-content p{
+
+        font-size:19px;
+
+    }
+
+    .xv-background{
+
+        font-size:130px;
+
+    }
+
+    .date-box{
+
+        width:220px;
+
+    }
+
+    .date-box h2{
+
+        font-size:60px;
+
+    }
+
+    .countdown{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:15px;
+
+    }
+
+    .countdown span{
+
+        font-size:42px;
+
+    }
+
+    .event-card{
+
+        padding:25px;
+
+    }
+
+    .event-card h3{
+
+        font-size:26px;
+
+    }
+
+    .event-card p{
+
+        font-size:18px;
+
+    }
+
+    .btn,
+    #musicButton{
+
+        width:100%;
+
+    }
+
+    footer h2{
+
+        font-size:56px;
+
+    }
 
 }
