@@ -10,18 +10,17 @@ envelope.addEventListener("click", () => {
 
     cover.classList.add("open");
 
-    setTimeout(() => {
+ setTimeout(() => {
 
-        cover.classList.add("hidden");
+    invitation.style.display = "block";
 
-        invitation.style.display = "block";
+}, 850);
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+setTimeout(() => {
 
-    }, 900);
+    cover.classList.add("hidden");
+
+}, 1500);
 
 });
 
