@@ -1,488 +1,109 @@
-/*=========================================
-  FUENTES Y VARIABLES
-=========================================*/
+// =========================
+// APERTURA DEL SOBRE
+// =========================
 
-:root{
+const cover = document.getElementById("cover");
+const envelope = document.getElementById("envelope");
+const invitation = document.getElementById("invitation");
 
---bg1:#dfeaf8;
---bg2:#c9dcf5;
---bg3:#8eaed8;
+envelope.addEventListener("click", () => {
 
---gold:#c9a646;
+    cover.classList.add("open");
 
---text:#2d3d56;
+    setTimeout(() => {
 
---white:#ffffff;
+        cover.classList.add("hidden");
 
---glass:rgba(255,255,255,.30);
+        invitation.style.display = "block";
 
---shadow:0 25px 60px rgba(0,0,0,.12);
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
-}
+    }, 900);
 
-*{
+});
 
-margin:0;
-padding:0;
-box-sizing:border-box;
+// =========================
+// CUENTA REGRESIVA
+// =========================
 
-}
+const eventDate = new Date("September 18, 2026 17:30:00").getTime();
 
-html{
+function countdown() {
 
-scroll-behavior:smooth;
+    const now = new Date().getTime();
 
-}
+    const distance = eventDate - now;
 
-body{
+    if (distance <= 0) {
 
-font-family:'Cormorant Garamond',serif;
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
 
-background:
-linear-gradient(180deg,var(--bg1),var(--bg2),var(--bg3));
+        return;
 
-color:var(--text);
+    }
 
-overflow-x:hidden;
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
-}
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+    );
 
-/*=========================================
-GLITTER
-=========================================*/
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) /
+        (1000 * 60)
+    );
 
-#glitter{
+    const seconds = Math.floor(
+        (distance % (1000 * 60)) /
+        1000
+    );
 
-position:fixed;
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
 
-left:0;
-top:0;
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
 
-width:100%;
-height:100%;
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
 
-pointer-events:none;
-
-z-index:1;
-
-overflow:hidden;
-
-}
-
-.sparkle{
-
-position:absolute;
-
-width:4px;
-
-height:4px;
-
-border-radius:50%;
-
-background:white;
-
-opacity:.9;
-
-animation:fall linear infinite;
-
-filter:blur(.5px);
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
 
 }
 
-@keyframes fall{
+countdown();
 
-0%{
+setInterval(countdown, 1000);
 
-transform:translateY(-20px);
+// =========================
+// MÚSICA
+// =========================
 
-opacity:0;
+const music = document.getElementById("music");
+const musicButton = document.getElementById("musicButton");
 
-}
+musicButton.addEventListener("click", () => {
 
-20%{
+    if (music.paused) {
 
-opacity:1;
+        music.play();
 
-}
+        musicButton.innerHTML = "⏸ Pausar música";
 
-100%{
+    } else {
 
-transform:translateY(110vh);
+        music.pause();
 
-opacity:0;
+        musicButton.innerHTML = "🎵 Música";
 
-}
+    }
 
-}
-
-/*=========================================
-SOBRE
-=========================================*/
-
-#cover{
-
-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-position:relative;
-
-background:linear-gradient(180deg,#dfeaf8,#b8d0f1);
-
-}
-
-.overlay{
-
-position:absolute;
-
-inset:0;
-
-background:rgba(255,255,255,.18);
-
-backdrop-filter:blur(4px);
-
-}
-
-.envelope-container{
-
-position:relative;
-
-z-index:10;
-
-}
-
-#envelope{
-
-width:340px;
-
-height:230px;
-
-position:relative;
-
-cursor:pointer;
-
-transition:.5s;
-
-}
-
-#envelope:hover{
-
-transform:scale(1.05);
-
-}
-
-.envelope-body{
-
-position:absolute;
-
-bottom:0;
-
-width:100%;
-
-height:100%;
-
-background:white;
-
-border-radius:10px;
-
-box-shadow:var(--shadow);
-
-}
-
-.envelope-top{
-
-position:absolute;
-
-top:0;
-
-width:100%;
-
-height:100%;
-
-background:#edf3fb;
-
-clip-path:polygon(0 0,50% 58%,100% 0,100% 0,100% 100%,0 100%);
-
-border-radius:10px;
-
-}
-
-.letter{
-
-position:absolute;
-
-left:50%;
-
-top:50%;
-
-transform:translate(-50%,-50%);
-
-background:white;
-
-width:82%;
-
-padding:25px;
-
-border-radius:12px;
-
-text-align:center;
-
-box-shadow:0 10px 25px rgba(0,0,0,.08);
-
-transition:.7s;
-
-}
-
-.letter h1{
-
-font-size:70px;
-
-color:var(--gold);
-
-}
-
-.letter h2{
-
-font-family:'Great Vibes',cursive;
-
-font-size:52px;
-
-margin:5px 0;
-
-}
-
-.letter p{
-
-font-family:Montserrat,sans-serif;
-
-letter-spacing:2px;
-
-font-size:13px;
-
-margin-top:10px;
-
-}
-/*=========================================
-HERO
-=========================================*/
-
-#invitation{
-    display:none;
-    position:relative;
-    z-index:2;
-}
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:60px 20px;
-    position:relative;
-    overflow:hidden;
-}
-
-.xv-background{
-    position:absolute;
-    font-size:340px;
-    font-weight:700;
-    color:rgba(255,255,255,.30);
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    z-index:0;
-    user-select:none;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:850px;
-    text-align:center;
-}
-
-.hero-content h2{
-    font-size:28px;
-    letter-spacing:8px;
-    text-transform:uppercase;
-    color:#6d83a3;
-    font-family:'Montserrat',sans-serif;
-}
-
-.hero-content h1{
-    font-family:'Great Vibes',cursive;
-    font-size:110px;
-    color:#49688f;
-    margin:10px 0;
-}
-
-.hero-content h3{
-    font-size:38px;
-    font-weight:400;
-    letter-spacing:2px;
-    margin-bottom:30px;
-}
-
-.hero-content p{
-    max-width:700px;
-    margin:auto;
-    line-height:1.9;
-    font-size:24px;
-}
-
-.divider{
-    width:120px;
-    height:2px;
-    background:linear-gradient(to right,transparent,var(--gold),transparent);
-    margin:30px auto;
-}
-
-.date-box{
-    width:220px;
-    margin:45px auto;
-    padding:25px;
-    border-radius:22px;
-    background:rgba(255,255,255,.35);
-    backdrop-filter:blur(14px);
-    box-shadow:var(--shadow);
-}
-
-.date-box h2{
-    font-size:70px;
-    color:var(--gold);
-    letter-spacing:0;
-}
-
-.date-box h4,
-.date-box h5{
-    font-family:'Montserrat',sans-serif;
-    font-weight:500;
-}
-
-/*=========================================
-SECCIONES
-=========================================*/
-
-.glass{
-
-width:min(900px,92%);
-
-margin:60px auto;
-
-padding:50px;
-
-border-radius:28px;
-
-background:rgba(255,255,255,.35);
-
-backdrop-filter:blur(16px);
-
-box-shadow:var(--shadow);
-
-text-align:center;
-
-}
-
-.glass h2{
-
-font-family:'Great Vibes',cursive;
-
-font-size:62px;
-
-color:#49688f;
-
-margin-bottom:15px;
-
-}
-
-.parents{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-gap:25px;
-
-margin-top:30px;
-
-}
-
-.parents div{
-
-padding:30px;
-
-border-radius:18px;
-
-background:rgba(255,255,255,.40);
-
-}
-
-.parents h3{
-
-font-size:30px;
-
-margin-bottom:8px;
-
-}
-
-.parents p{
-
-font-family:'Montserrat',sans-serif;
-
-letter-spacing:2px;
-
-color:#6b7b92;
-
-}
-
-/*=========================================
-CONTADOR
-=========================================*/
-
-.countdown{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:20px;
-
-margin-top:40px;
-
-}
-
-.countdown div{
-
-padding:25px;
-
-border-radius:20px;
-
-background:rgba(255,255,255,.45);
-
-}
-
-.countdown span{
-
-display:block;
-
-font-size:55px;
-
-font-weight:bold;
-
-color:#49688f;
-
-}
-
-.countdown small{
-
-font-family:'Montserrat',sans-serif;
-
-text-transform:uppercase;
-
-letter-spacing:2px;
-
-}
+});
