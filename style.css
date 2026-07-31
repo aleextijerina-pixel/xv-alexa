@@ -1,707 +1,289 @@
-/* ==========================
-   VARIABLES
-========================== */
+/*=========================================
+EVENTOS
+=========================================*/
 
-:root{
-    --azul:#0B1F3A;
-    --azul2:#17375E;
-    --dorado:#D4AF37;
-    --blanco:#ffffff;
-    --gris:#E8E8E8;
-    --sombra:0 20px 40px rgba(0,0,0,.30);
-}
+.event-card{
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+max-width:650px;
 
-html{
-    scroll-behavior:smooth;
-}
+margin:40px auto 0;
 
-body{
-    background:linear-gradient(180deg,#08192E,#17375E,#0B1F3A);
-    color:white;
-    font-family:'Cormorant Garamond',serif;
-    overflow-x:hidden;
-}
+padding:35px;
 
-a{
-    text-decoration:none;
-}
+border-radius:22px;
 
-.section{
-    padding:90px 20px;
-    text-align:center;
-}
+background:rgba(255,255,255,.45);
 
-.section h2{
-    font-family:'Great Vibes',cursive;
-    color:var(--dorado);
-    font-size:60px;
-    margin-bottom:35px;
-}
-
-.card{
-
-    max-width:650px;
-
-    margin:auto;
-
-    background:rgba(255,255,255,.08);
-
-    border:1px solid rgba(255,255,255,.12);
-
-    backdrop-filter:blur(10px);
-
-    border-radius:25px;
-
-    padding:40px;
-
-    box-shadow:var(--sombra);
+box-shadow:var(--shadow);
 
 }
 
-.button{
+.event-icon{
 
-display:inline-block;
-
-margin-top:30px;
-
-padding:15px 35px;
-
-border-radius:50px;
-
-background:linear-gradient(90deg,#D4AF37,#F5D76E);
-
-color:#0B1F3A;
-
-font-weight:bold;
-
-transition:.4s;
-
-}
-
-.button:hover{
-
-transform:translateY(-5px);
-
-box-shadow:0 15px 25px rgba(212,175,55,.35);
-
-}
-
-/* ==========================
-LOADER
-========================== */
-
-#loader{
-
-position:fixed;
-
-left:0;
-top:0;
-
-width:100%;
-height:100%;
-
-background:#08192E;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-z-index:9999;
-
-transition:1s;
-
-}
-
-.loader-content{
-
-text-align:center;
-
-}
-
-.loader-circle{
-
-width:70px;
-
-height:70px;
-
-border-radius:50%;
-
-border:6px solid rgba(255,255,255,.2);
-
-border-top:6px solid var(--dorado);
-
-animation:spin 1s linear infinite;
-
-margin:auto;
+font-size:55px;
 
 margin-bottom:20px;
 
 }
 
-@keyframes spin{
+.event-card h3{
 
-100%{
+font-size:34px;
 
-transform:rotate(360deg);
+color:#49688f;
 
-}
-
-}
-
-/* ==========================
-PANTALLA INICIAL
-========================== */
-
-#welcome{
-
-height:100vh;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-position:relative;
-
-overflow:hidden;
-
-background:
-radial-gradient(circle at top,#1F4A7A,#08192E);
+margin-bottom:20px;
 
 }
 
-.background-stars{
+.event-card p{
 
-position:absolute;
+font-size:22px;
 
-width:100%;
-height:100%;
-
-background-image:
-radial-gradient(#ffffff 1px,transparent 1px);
-
-background-size:40px 40px;
-
-opacity:.18;
-
-animation:stars 30s linear infinite;
-
-}
-
-@keyframes stars{
-
-100%{
-
-transform:translateY(-120px);
-
-}
-
-}
-
-.welcome-content{
-
-position:relative;
-
-z-index:2;
-
-text-align:center;
-
-}
-
-.welcome-content h3{
-
-font-size:90px;
-
-font-family:'Great Vibes',cursive;
+line-height:1.8;
 
 margin-bottom:10px;
 
 }
 
-.welcome-content p{
+/*=========================================
+DRESS CODE
+=========================================*/
 
-letter-spacing:4px;
+.dress h1{
 
-font-family:Montserrat,sans-serif;
-
-margin-bottom:40px;
-
-}
-
-/* ==========================
-SOBRE
-========================== */
-
-#envelope{
-
-position:relative;
-
-width:340px;
-
-height:220px;
-
-margin:auto;
-
-cursor:pointer;
-
-transition:.5s;
-
-}
-
-.envelope-back{
-
-position:absolute;
-
-width:100%;
-height:100%;
-
-background:#d8dce5;
-
-border-radius:12px;
-
-}
-
-.envelope-front{
-
-position:absolute;
-
-bottom:0;
-
-width:100%;
-height:100%;
-
-clip-path:polygon(0 0,50% 60%,100% 0,100% 100%,0 100%);
-
-background:white;
-
-border-radius:12px;
-
-box-shadow:var(--sombra);
-
-}
-
-.letter{
-
-position:absolute;
-
-left:50%;
-
-top:35%;
-
-transform:translate(-50%,-50%);
-
-width:82%;
-
-background:white;
-
-border-radius:10px;
-
-padding:25px;
-
-text-align:center;
-
-color:#17375E;
-
-transition:.6s;
-
-}
-
-.seal{
-
-display:inline-flex;
-
-justify-content:center;
-
-align-items:center;
-
-width:60px;
-
-height:60px;
-
-border-radius:50%;
-
-background:#7C1020;
-
-color:white;
-
-font-weight:bold;
+font-size:70px;
 
 margin-bottom:15px;
 
 }
-/* ==========================
-   HERO
-========================== */
 
-#invitation{
-    display:none;
+.dress h3{
+
+font-size:34px;
+
+color:#49688f;
+
+margin-bottom:15px;
+
 }
 
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    position:relative;
-    padding:40px 20px;
-    background:
-    linear-gradient(rgba(11,31,58,.75),rgba(11,31,58,.90)),
-    radial-gradient(circle at top,#1E4D80,#08192E);
+.dress p{
+
+font-size:22px;
+
 }
 
-.hero-content{
-    max-width:900px;
-    z-index:2;
-}
+/*=========================================
+BOTONES
+=========================================*/
 
-.crown{
-    font-size:70px;
-    margin-bottom:20px;
-    animation:float 3s ease-in-out infinite;
-}
-
-.hero h1{
-    font-family:'Great Vibes',cursive;
-    font-size:95px;
-    color:var(--dorado);
-    margin-bottom:15px;
-}
-
-.hero h2{
-    font-size:42px;
-    letter-spacing:4px;
-    margin-bottom:30px;
-}
-
-.hero p{
-    max-width:700px;
-    margin:auto;
-    line-height:1.8;
-    font-size:24px;
-}
-
+.btn,
 #musicButton{
-    margin-top:40px;
-    padding:15px 40px;
-    border:none;
-    border-radius:50px;
-    cursor:pointer;
-    background:linear-gradient(90deg,#D4AF37,#F7DA74);
-    color:#0B1F3A;
-    font-size:18px;
-    font-weight:bold;
-    transition:.3s;
+
+display:inline-block;
+
+margin-top:30px;
+
+padding:16px 40px;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#7d9bc6,#4f6f98);
+
+color:#fff;
+
+font-family:'Montserrat',sans-serif;
+
+font-size:16px;
+
+font-weight:600;
+
+text-decoration:none;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 12px 30px rgba(79,111,152,.25);
+
 }
 
+.btn:hover,
 #musicButton:hover{
-    transform:scale(1.05);
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 35px rgba(79,111,152,.35);
+
 }
 
-/* ==========================
-   PADRES
-========================== */
+.whatsapp{
 
-.parents{
-    display:flex;
-    gap:30px;
-    justify-content:center;
-    flex-wrap:wrap;
-    margin-top:40px;
+background:linear-gradient(135deg,#25D366,#128C7E);
+
 }
 
-.parent-card{
-    width:320px;
-    background:rgba(255,255,255,.08);
-    padding:35px;
-    border-radius:20px;
-    border:1px solid rgba(255,255,255,.15);
-    box-shadow:var(--sombra);
+/*=========================================
+LLUVIA DE SOBRES
+=========================================*/
+
+#giftBox{
+
+max-width:520px;
+
+margin:40px auto;
+
+padding:35px;
+
+border-radius:24px;
+
+background:rgba(255,255,255,.45);
+
+box-shadow:var(--shadow);
+
+transition:.4s;
+
 }
 
-.parent-card h3{
-    color:var(--dorado);
-    font-size:30px;
-    margin-bottom:15px;
+#giftBox:hover{
+
+transform:translateY(-6px);
+
 }
 
-.parent-card p{
-    font-size:26px;
+#giftBox h1{
+
+font-size:70px;
+
+margin-bottom:15px;
+
 }
 
-/* ==========================
-   CONTADOR
-========================== */
+#giftBox p{
 
-.countdown{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:25px;
-    margin-top:40px;
+font-size:22px;
+
+line-height:1.8;
+
 }
 
-.box{
-    width:150px;
-    padding:30px 15px;
-    border-radius:20px;
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.15);
-    box-shadow:var(--sombra);
-}
-
-.box span{
-    display:block;
-    font-size:55px;
-    color:var(--dorado);
-    font-weight:bold;
-}
-
-.box small{
-    font-size:18px;
-    letter-spacing:2px;
-}
-
-/* ==========================
-   CEREMONIA Y RECEPCIÓN
-========================== */
-
-.icon{
-    font-size:55px;
-    margin-bottom:20px;
-}
-
-.card h3{
-    color:var(--dorado);
-    font-size:36px;
-    margin-bottom:20px;
-}
-
-.card p{
-    font-size:23px;
-    line-height:1.8;
-}
-
-/* ==========================
-   DRESS CODE
-========================== */
-
-.dress-card{
-    max-width:500px;
-    margin:auto;
-    background:rgba(255,255,255,.08);
-    border-radius:25px;
-    padding:40px;
-    box-shadow:var(--sombra);
-}
-
-.dress-icon{
-    font-size:70px;
-    margin-bottom:20px;
-}
-
-.dress-card h3{
-    color:var(--dorado);
-    font-size:34px;
-    margin-bottom:15px;
-}
-
-.dress-card p{
-    font-size:22px;
-    line-height:1.7;
-}
-/* ==========================
-   LLUVIA DE SOBRES
-========================== */
-
-#giftEnvelope{
-    position:relative;
-    width:320px;
-    height:210px;
-    margin:40px auto;
-    cursor:pointer;
-    perspective:1000px;
-}
-
-.gift-cover{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(135deg,#ffffff,#ececec);
-    border-radius:12px;
-    clip-path:polygon(0 0,50% 60%,100% 0,100% 100%,0 100%);
-    transition:.8s;
-    transform-origin:top;
-    box-shadow:var(--sombra);
-}
-
-.gift-message{
-    position:absolute;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    width:85%;
-    background:#fff;
-    color:#17375E;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
-    opacity:0;
-    transition:.8s;
-}
-
-#giftEnvelope.open .gift-cover{
-    transform:rotateX(180deg);
-}
-
-#giftEnvelope.open .gift-message{
-    opacity:1;
-}
-
-/* ==========================
-   RSVP
-========================== */
-
-#rsvpForm{
-    max-width:600px;
-    margin:auto;
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-}
-
-#rsvpForm input,
-#rsvpForm select{
-    padding:16px;
-    border:none;
-    border-radius:10px;
-    font-size:18px;
-}
-
-#rsvpForm button{
-    padding:16px;
-    border:none;
-    border-radius:50px;
-    cursor:pointer;
-    background:linear-gradient(90deg,#D4AF37,#F8E08A);
-    color:#0B1F3A;
-    font-size:18px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-#rsvpForm button:hover{
-    transform:scale(1.04);
-}
-
-/* ==========================
-   FOOTER
-========================== */
+/*=========================================
+FOOTER
+=========================================*/
 
 footer{
-    padding:80px 20px;
-    text-align:center;
-    background:#08192E;
-}
 
-footer h2{
-    font-family:'Great Vibes',cursive;
-    color:var(--dorado);
-    font-size:60px;
-    margin-bottom:20px;
+padding:80px 20px;
+
+text-align:center;
+
 }
 
 footer p{
-    font-size:22px;
-    max-width:700px;
-    margin:auto;
-    line-height:1.8;
+
+font-size:24px;
+
+margin-bottom:20px;
+
 }
 
-footer h3{
-    margin-top:35px;
-    font-family:'Great Vibes',cursive;
-    color:var(--dorado);
-    font-size:55px;
+footer h2{
+
+font-family:'Great Vibes',cursive;
+
+font-size:70px;
+
+color:#49688f;
+
 }
 
-/* ==========================
-   ANIMACIONES
-========================== */
+/*=========================================
+RESPONSIVE
+=========================================*/
 
-@keyframes float{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-12px);
-    }
+@media (max-width:768px){
+
+.hero-content h1{
+
+font-size:72px;
+
 }
 
-.tap-text{
-    margin-top:20px;
-    font-family:Montserrat,sans-serif;
-    font-size:14px;
-    letter-spacing:2px;
-    opacity:.8;
+.hero-content h3{
+
+font-size:26px;
+
 }
 
-/* ==========================
-   RESPONSIVE
-========================== */
+.hero-content p{
 
-@media(max-width:768px){
+font-size:20px;
 
-    .hero h1{
-        font-size:70px;
-    }
+}
 
-    .hero h2{
-        font-size:28px;
-    }
+.xv-background{
 
-    .hero p{
-        font-size:20px;
-    }
+font-size:180px;
 
-    .section h2{
-        font-size:46px;
-    }
+}
 
-    .card,
-    .dress-card,
-    .parent-card{
-        width:100%;
-        padding:25px;
-    }
+.glass{
 
-    .countdown{
-        gap:15px;
-    }
+padding:30px 20px;
 
-    .box{
-        width:120px;
-    }
+}
 
-    .box span{
-        font-size:40px;
-    }
+.glass h2{
 
-    #envelope,
-    #giftEnvelope{
-        width:280px;
-        height:180px;
-    }
+font-size:46px;
 
-    .welcome-content h3{
-        font-size:65px;
-    }
+}
+
+.countdown{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.countdown span{
+
+font-size:42px;
+
+}
+
+.event-card h3{
+
+font-size:28px;
+
+}
+
+.event-card p{
+
+font-size:18px;
+
+}
+
+#envelope{
+
+width:280px;
+
+height:190px;
+
+}
+
+.letter h1{
+
+font-size:55px;
+
+}
+
+.letter h2{
+
+font-size:42px;
+
+}
+
 }
