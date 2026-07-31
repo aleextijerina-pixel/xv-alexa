@@ -254,32 +254,9 @@ SOBRE
 }
 
 .letter{
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:20px;
-
-    transform:translateX(-50%);
-
-    width:88%;
-    height:185px;
-
-    background:white;
-
-    border-radius:8px;
-
-    box-shadow:0 12px 30px rgba(0,0,0,.15);
-
-    text-align:center;
-
-    padding:25px;
-
-    transition:.8s;
-
+    ...
+    transition:transform .8s ease;
     z-index:2;
-
 }
 
 .letter h4{
@@ -1082,4 +1059,21 @@ h5{
 
     color:#49688f !important;
 
+}
+/*=========================
+APERTURA DEL SOBRE
+=========================*/
+
+#cover.open .envelope-top{
+    transform:rotateX(180deg);
+}
+
+#cover.open .letter{
+    transform:translate(-50%,-165%);
+}
+
+#cover.hidden{
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .8s ease;
 }
