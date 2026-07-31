@@ -50,14 +50,10 @@ html{
 }
 
 body{
-
     font-family:'Cormorant Garamond',serif;
-    color:#334;
+    background:linear-gradient(180deg,var(--bg1),var(--bg2),var(--bg3));
+    color:var(--text);
     overflow-x:hidden;
-
-    background:
-    linear-gradient(180deg,#edf5ff 0%,#dce8f5 35%,#c9dced 70%,#b7cfe6 100%);
-
 }
 
 /*==================================================
