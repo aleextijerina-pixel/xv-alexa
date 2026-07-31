@@ -198,66 +198,7 @@ SOBRE
 
 }
 
-.envelope-body{
 
-    position:absolute;
-
-    bottom:0;
-
-    width:100%;
-    height:170px;
-
-    background:linear-gradient(180deg,#f9f9f9,#e7e7e7);
-
-    border-radius:0 0 12px 12px;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.20);
-
-    overflow:hidden;
-
-}
-
-.envelope-body::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:100%;
-    height:100%;
-
-    background:
-
-    linear-gradient(135deg,transparent 49%,#dadada 50%),
-
-    linear-gradient(225deg,transparent 49%,#dadada 50%);
-
-}
-
-.envelope-top{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:110px;
-
-    background:#edf3fb;
-
-    clip-path:polygon(0 0,100% 0,50% 100%);
-
-    transform-origin:top center;
-    transform-style:preserve-3d;
-
-    transition:transform .8s ease;
-
-    z-index:5;
-}
-
-.letter{
-    ...
-    transition:transform .8s ease;
-    z-index:2;
-}
 
 .letter h4{
 
@@ -1076,4 +1017,212 @@ APERTURA DEL SOBRE
     opacity:0;
     visibility:hidden;
     transition:opacity .8s ease;
+}
+/*=========================================
+SOBRE PREMIUM
+=========================================*/
+
+.envelope-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    perspective:1400px;
+}
+
+#envelope{
+    position:relative;
+    width:360px;
+    height:240px;
+}
+
+/* Carta */
+
+.letter{
+    position:absolute;
+    left:50%;
+    bottom:20px;
+
+    width:300px;
+    height:190px;
+
+    transform:translateX(-50%);
+
+    background:white;
+
+    border-radius:10px;
+
+    border:2px solid #355b87;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    transition:all .9s ease;
+
+    z-index:1;
+}
+
+.letter-content{
+    text-align:center;
+    padding:20px;
+}
+
+.letter-content h1{
+    font-family:'Great Vibes',cursive;
+    font-size:58px;
+    color:#355b87;
+}
+
+.letter-content h3{
+    color:#5b7091;
+    font-weight:400;
+}
+
+.letter-content h5{
+    color:#355b87;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.line{
+    width:80px;
+    height:2px;
+    background:#355b87;
+    margin:15px auto;
+}
+
+/* Base del sobre */
+
+.envelope-bottom{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:150px;
+
+    background:#223b63;
+
+    border-radius:0 0 12px 12px;
+
+    z-index:3;
+}
+
+/* Laterales */
+
+.flap-left,
+.flap-right{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:50%;
+    height:150px;
+
+    background:#2f4d7d;
+
+    z-index:4;
+}
+
+.flap-left{
+
+    left:0;
+
+    clip-path:polygon(0 0,100% 100%,0 100%);
+}
+
+.flap-right{
+
+    right:0;
+
+    clip-path:polygon(100% 0,100% 100%,0 100%);
+}
+
+/* Solapa superior */
+
+.flap-top{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+    height:135px;
+
+    background:#355b87;
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+
+    transform-origin:top center;
+
+    transition:transform .9s ease;
+
+    z-index:6;
+}
+
+/* Sello */
+
+#seal{
+
+    position:absolute;
+
+    left:50%;
+    top:105px;
+
+    transform:translateX(-50%);
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    background:#355b87;
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    z-index:10;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+    transition:.3s;
+}
+
+#seal:hover{
+
+    transform:translateX(-50%) scale(1.08);
+}
+
+/* Animación */
+
+#cover.open .flap-top{
+
+    transform:rotateX(180deg);
+}
+
+#cover.open .letter{
+
+    transform:translate(-50%,-170px);
+
+    transition-delay:.25s;
+}
+
+#cover.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.8s;
 }
