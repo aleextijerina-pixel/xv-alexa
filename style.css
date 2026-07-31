@@ -1059,3 +1059,29 @@ body::before{
     pointer-events:none;
     z-index:-1;
 }
+/*==============================
+NUEVA PALETA AZUL
+==============================*/
+
+.hero-content h1,
+.hero-content h2,
+.hero-content h3,
+.glass h2,
+.parents h3,
+.event-card h3,
+.dress h3,
+footer h2{
+
+    color:#2e4f7a !important;
+
+}
+
+p,
+small,
+span,
+h4,
+h5{
+
+    color:#49688f !important;
+
+}
