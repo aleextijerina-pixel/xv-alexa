@@ -1,21 +1,18 @@
-/*==================================================
-XV AÑOS | ALEXA MARLEN
-STYLE.CSS
-==================================================*/
-
 :root{
 
-    --blue1:#dfeaf7;
-    --blue2:#bfd4ea;
-    --blue3:#7d9bc6;
-    --blue4:#49688f;
+    --bg1:#0b1f3a;
+    --bg2:#102b52;
+    --bg3:#183b6b;
 
-    --gold:#d6b36d;
+    --gold:#d4af37;
+
+    --text:#f4f6fb;
+
     --white:#ffffff;
 
-    --glass:rgba(255,255,255,.35);
+    --glass:rgba(255,255,255,.12);
 
-    --shadow:0 20px 60px rgba(0,0,0,.12);
+    --shadow:0 25px 60px rgba(0,0,0,.35);
 
 }
 
