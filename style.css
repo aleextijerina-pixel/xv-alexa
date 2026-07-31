@@ -50,10 +50,10 @@ html{
 }
 
 body{
-    font-family:'Cormorant Garamond',serif;
-    background:linear-gradient(180deg,var(--bg1),var(--bg2),var(--bg3));
-    color:var(--text);
-    overflow-x:hidden;
+    font-family:'Cormorant Garamond', serif;
+    background: url("images/background.jpg") center top / cover no-repeat fixed;
+    color: var(--text);
+    overflow-x: hidden;
 }
 
 /*==================================================
