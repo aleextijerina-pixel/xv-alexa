@@ -979,9 +979,15 @@ body::before{
 NUEVA PALETA AZUL
 ==============================*/
 
-.hero-content h1,
-.hero-content h2,
-.hero-content h3,
+.hero-content h1{
+    color:#ffffff;
+}
+.hero-content h2{
+    color:#ffffff;
+}
+.hero-content h3{
+    color:#ffffff;
+}
 .glass h2,
 .parents h3,
 .event-card h3,
@@ -992,7 +998,9 @@ footer h2{
 
 }
 
-p,
+.hero-content p{
+    color:#ffffff;
+}
 small,
 span,
 h4,
@@ -1225,4 +1233,17 @@ SOBRE PREMIUM
     visibility:hidden;
 
     transition:.8s;
+}
+/* ===== FORZAR TEXTO BLANCO ===== */
+
+.hero-content h1,
+.hero-content h2,
+.hero-content h3,
+.hero-content h4,
+.hero-content h5,
+.hero-content p,
+.date-box h2,
+.date-box h4,
+.date-box h5{
+    color:#fff !important;
 }
