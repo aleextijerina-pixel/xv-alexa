@@ -1,105 +1,123 @@
-// =========================
-// SOBRE PREMIUM
-// =========================
+//======================================
+// ELEMENTOS
+//======================================
 
 const cover = document.getElementById("cover");
-const seal = document.getElementById("seal");
 const invitation = document.getElementById("invitation");
+
+const seal = document.getElementById("seal");
 
 const music = document.getElementById("music");
 const musicButton = document.getElementById("musicButton");
 
+//======================================
+// ABRIR SOBRE
+//======================================
+
 seal.addEventListener("click", () => {
 
-    // Evita doble clic
-    seal.style.pointerEvents = "none";
-
-    // Abre el sobre
     cover.classList.add("open");
 
-    // Inicia la música (si el archivo existe)
+    // iniciar música
     if (music) {
-        music.play().catch(() => {});
+
+        music.play().catch(()=>{});
+
+        musicButton.innerHTML="Pausar música";
+
     }
 
-    if (musicButton) {
-        musicButton.innerHTML = "⏸ Pausar música";
-    }
+    // mostrar invitación
 
-    // Muestra la invitación
-    setTimeout(() => {
+    setTimeout(()=>{
 
-        invitation.style.display = "block";
+        invitation.style.display="block";
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+        invitation.style.opacity="0";
 
-    }, 1200);
+        setTimeout(()=>{
 
-    // Oculta el sobre
-    setTimeout(() => {
+            invitation.style.transition="1s";
+
+            invitation.style.opacity="1";
+
+        },50);
+
+    },900);
+
+    // ocultar portada
+
+    setTimeout(()=>{
 
         cover.classList.add("hidden");
 
-    }, 1800);
+    },1700);
 
 });
 
+//======================================
+// BOTÓN DE MÚSICA
+//======================================
 
-// =========================
-// CUENTA REGRESIVA
-// =========================
+musicButton.addEventListener("click",()=>{
 
-const eventDate = new Date("September 18, 2026 17:30:00").getTime();
+    if(music.paused){
 
-function countdown() {
+        music.play();
 
-    const now = new Date().getTime();
-    const distance = eventDate - now;
+        musicButton.innerHTML="Pausar música";
 
-    if (distance <= 0) {
-        days.textContent = "00";
-        hours.textContent = "00";
-        minutes.textContent = "00";
-        seconds.textContent = "00";
-        return;
+    }else{
+
+        music.pause();
+
+        musicButton.innerHTML="Reproducir música";
+
     }
 
-    days.textContent = String(Math.floor(distance / 86400000)).padStart(2, "0");
-    hours.textContent = String(Math.floor((distance % 86400000) / 3600000)).padStart(2, "0");
-    minutes.textContent = String(Math.floor((distance % 3600000) / 60000)).padStart(2, "0");
-    seconds.textContent = String(Math.floor((distance % 60000) / 1000)).padStart(2, "0");
+});
+
+//======================================
+// CUENTA REGRESIVA
+//======================================
+
+const eventDate = new Date("2026-09-18T17:30:00").getTime();
+
+function countdown(){
+
+    const now = new Date().getTime();
+
+    const distance = eventDate-now;
+
+    if(distance<=0){
+
+        days.innerHTML="00";
+        hours.innerHTML="00";
+        minutes.innerHTML="00";
+        seconds.innerHTML="00";
+
+        return;
+
+    }
+
+    const d=Math.floor(distance/(1000*60*60*24));
+
+    const h=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+    const m=Math.floor((distance%(1000*60*60))/(1000*60));
+
+    const s=Math.floor((distance%(1000*60))/1000);
+
+    document.getElementById("days").innerHTML=String(d).padStart(2,"0");
+
+    document.getElementById("hours").innerHTML=String(h).padStart(2,"0");
+
+    document.getElementById("minutes").innerHTML=String(m).padStart(2,"0");
+
+    document.getElementById("seconds").innerHTML=String(s).padStart(2,"0");
 
 }
 
 countdown();
-setInterval(countdown, 1000);
 
-
-// =========================
-// BOTÓN DE MÚSICA
-// =========================
-
-if (musicButton) {
-
-    musicButton.addEventListener("click", () => {
-
-        if (music.paused) {
-
-            music.play();
-
-            musicButton.innerHTML = "⏸ Pausar música";
-
-        } else {
-
-            music.pause();
-
-            musicButton.innerHTML = "🎵 Música";
-
-        }
-
-    });
-
-}
+setInterval(countdown,1000);
