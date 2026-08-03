@@ -4,17 +4,16 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>XV Años | Alexa Marlen</title>
 
-<meta name="theme-color" content="#5C83B8">
+<meta name="theme-color" content="#1D3557">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 
@@ -22,93 +21,75 @@
 
 <body>
 
-<!--==========================
-SOBRE
-===========================-->
+<!-- ======================================
+FONDO
+====================================== -->
 
-<!--==========================
-SOBRE PREMIUM
-===========================-->
+<div class="background-overlay"></div>
+
+<!-- ======================================
+SOBRE
+====================================== -->
 
 <section id="cover">
 
-    <div class="overlay"></div>
+    <div class="envelope">
 
-    <div class="envelope-container">
+        <div class="envelope-shadow"></div>
 
-        <div id="envelope">
+        <div class="letter">
 
-            <!-- Carta -->
+            <span class="small-title">
+                MIS XV AÑOS
+            </span>
 
-            <div class="letter">
+            <h1>Alexa</h1>
 
-                <div class="letter-content">
+            <h3>Marlen Reyes García</h3>
 
-                    <h5>Mis XV Años</h5>
+            <div class="line"></div>
 
-                    <h1>Alexa</h1>
-
-                    <h3>Marlen Reyes García</h3>
-
-                    <div class="line"></div>
-
-                    <p>Toca el sello para abrir</p>
-
-                </div>
-
-            </div>
-
-            <!-- Solapa superior -->
-
-            <div class="flap-top"></div>
-
-            <!-- Solapa izquierda -->
-
-            <div class="flap-left"></div>
-
-            <!-- Solapa derecha -->
-
-            <div class="flap-right"></div>
-
-            <!-- Parte inferior -->
-
-            <div class="envelope-bottom"></div>
-
-            <!-- Sello -->
-
-            <div id="seal">
-
-                ❤
-
-            </div>
+            <p>
+                Toca el sello para abrir
+            </p>
 
         </div>
+
+        <div class="envelope-back"></div>
+
+        <div class="envelope-left"></div>
+
+        <div class="envelope-right"></div>
+
+        <div class="envelope-bottom"></div>
+
+        <div class="envelope-top"></div>
+
+        <button id="seal">
+
+            XV
+
+        </button>
 
     </div>
 
 </section>
 
-<!--==========================
+<!-- ======================================
 INVITACIÓN
-===========================-->
+====================================== -->
 
 <main id="invitation">
 
 <section class="hero">
 
-<span class="xv-background">
+<div class="glass">
 
-XV
-
-</span>
-
-<div class="hero-content">
-
-<h2>
+<h5>
 
 Mis XV Años
 
-</h2>
+</h5>
 
 <h1>
 
@@ -116,9 +97,11 @@ Alexa
 
 </h1>
 
-<h3>
+<h2>
 
-</h3>
+Marlen Reyes García
+
+</h2>
 
 <div class="divider"></div>
 
@@ -132,7 +115,7 @@ quiero compartir contigo este día tan especial.
 
 </p>
 
-<div class="date-box">
+<div class="date-card">
 
 <h4>
 
@@ -140,11 +123,11 @@ Viernes
 
 </h4>
 
-<h2>
+<h3>
 
 18
 
-</h2>
+</h3>
 
 <h5>
 
@@ -156,7 +139,7 @@ Septiembre 2026
 
 <button id="musicButton">
 
-🎵 Música
+Reproducir música
 
 </button>
 
@@ -169,127 +152,89 @@ Septiembre 2026
 </div>
 
 </section>
-
-<!--==========================
+<!--=====================================
 PADRES
-===========================-->
+======================================-->
 
 <section class="glass">
 
-<h2>
+    <h2>Mis Padres</h2>
 
-Mis Padres
+    <div class="divider"></div>
 
-</h2>
+    <div class="parents">
 
-<div class="divider"></div>
+        <div class="parent-card">
 
-<div class="parents">
+            <h3>Braulio Reyes Rodríguez</h3>
 
-<div>
+            <span>Papá</span>
 
-<h3>
+        </div>
 
-Braulio Reyes Rodríguez
+        <div class="parent-card">
 
-</h3>
+            <h3>Angélica Marlenne García Martínez</h3>
 
-<p>
+            <span>Mamá</span>
 
-Papá
+        </div>
 
-</p>
-
-</div>
-
-<div>
-
-<h3>
-
-Angélica Marlenne García Martínez
-
-</h3>
-
-<p>
-
-Mamá
-
-</p>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<!--==========================
-CONTADOR
-===========================-->
+<!--=====================================
+CUENTA REGRESIVA
+======================================-->
 
 <section class="glass">
 
-<h2>
+    <h2>Cuenta Regresiva</h2>
 
-Cuenta Regresiva
+    <div class="divider"></div>
 
-</h2>
+    <div class="countdown">
 
-<div class="countdown">
+        <div>
 
-<div>
+            <span id="days">00</span>
 
-<span id="days">
+            <small>Días</small>
 
-00
+        </div>
 
-</span>
+        <div>
 
-<small>Días</small>
+            <span id="hours">00</span>
 
-</div>
+            <small>Horas</small>
 
-<div>
+        </div>
 
-<span id="hours">
+        <div>
 
-00
+            <span id="minutes">00</span>
 
-</span>
+            <small>Minutos</small>
 
-<small>Horas</small>
+        </div>
 
-</div>
+        <div>
 
-<div>
+            <span id="seconds">00</span>
 
-<span id="minutes">
+            <small>Segundos</small>
 
-00
+        </div>
 
-</span>
-
-<small>Minutos</small>
-
-</div>
-
-<div>
-
-<span id="seconds">
-
-00
-
-</span>
-
-<small>Segundos</small>
-
-</div>
-
-</div>
+    </div>
 
 </section>
-<!--==========================
+
+<!--=====================================
 CEREMONIA
-===========================-->
+======================================-->
 
 <section class="glass">
 
@@ -297,37 +242,47 @@ CEREMONIA
 
     <div class="divider"></div>
 
-    <div class="event-card">
+    <h3>Parroquia Santa Teresita del Niño Jesús</h3>
 
+    <p>
 
-        <h3>Parroquia Santa Teresita del Niño Jesús</h3>
+        Viernes 18 de septiembre de 2026
 
-        <p>Viernes 18 de septiembre de 2026</p>
+        <br><br>
 
-        <p>6:00 PM</p>
+        5:30 PM
 
-        <p>
-            Calle Nogal,<br>
-            Col. Ébanos IV,<br>
-            C.P. 66612<br>
-            Cd. Apodaca, Nuevo León
-        </p>
+        <br><br>
 
-        <a class="btn"
+        Calle Nogal
+
+        <br>
+
+        Col. Ébanos IV
+
+        <br>
+
+        Apodaca, Nuevo León
+
+    </p>
+
+    <a
+
+        class="btn"
+
         href="https://maps.google.com/?q=Parroquia+Santa+Teresita+del+Niño+Jesús+Apodaca"
+
         target="_blank">
 
-            Ver ubicación
+        Ver ubicación
 
-        </a>
-
-    </div>
+    </a>
 
 </section>
 
-<!--==========================
+<!--=====================================
 RECEPCIÓN
-===========================-->
+======================================-->
 
 <section class="glass">
 
@@ -335,156 +290,131 @@ RECEPCIÓN
 
     <div class="divider"></div>
 
-    <div class="event-card">
+    <h3>Salón de Recepción</h3>
 
+    <p>
 
-        <h3>Salón de Recepción</h3>
+        7:00 PM
 
-        <p>8:00 PM</p>
+        <br><br>
 
-        <p>
+        Ignacio Aldama #101
 
-            Ignacio Aldama #101<br>
+        <br>
 
-            Cabecera Municipal<br>
+        Apodaca Centro
 
-            Apodaca Centro<br>
+        <br>
 
-            C.P. 66600
+        Nuevo León
 
-        </p>
+    </p>
 
-        <a class="btn"
+    <a
+
+        class="btn"
 
         href="https://maps.google.com/?q=Ignacio+Aldama+101+Apodaca"
 
         target="_blank">
 
-            Cómo llegar
+        Cómo llegar
 
-        </a>
-
-    </div>
+    </a>
 
 </section>
 
-<!--==========================
+<!--=====================================
 DRESS CODE
-===========================-->
+======================================-->
 
 <section class="glass">
 
-<h2>
+    <h2>Dress Code</h2>
 
-Dress Code
+    <div class="divider"></div>
 
-</h2>
+    <h3>Formal</h3>
 
-<div class="divider"></div>
+    <p>
 
-<div class="dress">
+        Tu elegancia hará aún más especial esta celebración.
 
-
-<h3>
-
-Formal
-
-</h3>
-
-<p>
-
-Tu elegancia hará aún más especial esta celebración.
-
-</p>
-
-</div>
+    </p>
 
 </section>
 
-<!--==========================
+<!--=====================================
 LLUVIA DE SOBRES
-===========================-->
+======================================-->
 
 <section class="glass">
 
-<h2>
+    <h2>Lluvia de Sobres</h2>
 
-Lluvia de Sobres
+    <div class="divider"></div>
 
-</h2>
+    <p>
 
-<div class="divider"></div>
+        Tu presencia será el mejor regalo.
 
-<div id="giftBox">
+    </p>
 
+    <p>
 
-<p>
+        Si deseas tener un detalle conmigo,
 
-Tu presencia es el mejor regalo.
+        agradeceré recibirlo en un sobre.
 
-</p>
-
-<p>
-
-Si deseas tener un detalle conmigo,
-
-agradeceré recibirlo en un sobre.
-
-</p>
-
-</div>
+    </p>
 
 </section>
 
-<!--==========================
-WHATSAPP
-===========================-->
+<!--=====================================
+CONFIRMACIÓN
+======================================-->
 
 <section class="glass">
 
-<h2>
+    <h2>Confirmar Asistencia</h2>
 
-Confirmar asistencia
+    <div class="divider"></div>
 
-</h2>
+    <p>
 
-<div class="divider"></div>
+        Confirma antes del
 
-<p>
+        <strong>30 de agosto de 2026</strong>
 
-Confirma antes del
+    </p>
 
-<strong>30 de agosto de 2026</strong>
+    <a
 
-</p>
+        class="btn whatsapp"
 
-<a
+        href="https://wa.me/5218181132681?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%20XV%20años%20de%20Alexa%20Marlen."
 
-class="btn whatsapp"
+        target="_blank">
 
-href="https://wa.me/5218181132681?text=Hola,%20soy%20_____________.%20Confirmo%20mi%20asistencia%20a%20los%20XV%20años%20de%20Alexa%20Marlen.%20Asistiremos:%20____%20persona(s)."
+        Confirmar por WhatsApp
 
-target="_blank">
-
-Confirmar por WhatsApp
-
-</a>
+    </a>
 
 </section>
 
 <footer>
 
-<p>
+    <p>
 
-Gracias por ser parte de este momento tan especial.
+        Gracias por acompañarme en este día tan especial.
 
-</p>
+    </p>
 
-<h2>
+    <h2>
 
-Alexa Marlen
+        Alexa Marlen
 
-</h2>
+    </h2>
 
 </footer>
 
