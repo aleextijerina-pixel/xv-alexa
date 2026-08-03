@@ -763,20 +763,21 @@ footer{
 
 }
 
-footer p{
+footer{
 
-    font-size:24px;
-    margin-bottom:20px;
+    color:white;
 
 }
 
 footer h2{
 
-    font-family:'Great Vibes',cursive;
+    color:white !important;
 
-    font-size:72px;
+}
 
-    color:var(--blue4);
+footer p{
+
+    color:white !important;
 
 }
 /*==================================================
@@ -1273,5 +1274,16 @@ TEXTO BLANCO
 .date-box h5{
 
     color:#fff !important;
+
+}
+/*=========================
+FORZAR TEXTO BLANCO
+=========================*/
+
+.hero-content *,
+.glass *,
+footer *{
+
+    color:#ffffff !important;
 
 }
