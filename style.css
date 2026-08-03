@@ -364,56 +364,74 @@ HERO
 TIPOGRAFÍA
 ======================================*/
 
-.hero h5{
-
-    font-family:'Montserrat',sans-serif;
-
-    letter-spacing:6px;
-
-    font-size:15px;
-
-    text-transform:uppercase;
-
-    color:white;
-
-}
-
 .hero h1{
 
-    font-family:'Great Vibes',cursive;
+    font-family:'Great Vibes', cursive;
 
-    font-size:120px;
+    font-size:220px;
 
-    color:white;
+    font-weight:400;
+
+    line-height:.9;
+
+    color:#ffffff;
 
     margin:10px 0;
+
+    text-shadow:
+        0 2px 0 rgba(255,255,255,.35),
+        0 8px 20px rgba(0,0,0,.18);
 
 }
 
 .hero h2{
 
-    font-size:40px;
+    font-family:'Cormorant Garamond', serif;
 
-    font-weight:300;
+    font-size:58px;
 
-    color:white;
+    font-weight:400;
+
+    color:#ffffff;
+
+    letter-spacing:1px;
+
+    margin-top:-20px;
+
+    margin-bottom:45px;
 
 }
 
+.hero h5{
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:20px;
+
+    letter-spacing:8px;
+
+    text-transform:uppercase;
+
+    color:#ffffff;
+
+    margin-bottom:10px;
+
+}
 .hero p{
 
-    max-width:700px;
+    max-width:820px;
 
     margin:35px auto;
 
-    font-size:24px;
+    font-size:30px;
 
     line-height:1.8;
 
-    color:white;
+    color:#ffffff;
+
+    font-weight:400;
 
 }
-
 .divider{
 
     width:120px;
@@ -432,19 +450,9 @@ FECHA
 
 .date-card{
 
-    width:230px;
+    width:280px;
 
-    margin:45px auto;
-
-    padding:30px;
-
-    border-radius:25px;
-
-    background:rgba(255,255,255,.18);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.30);
+    padding:35px;
 
 }
 
@@ -458,11 +466,7 @@ FECHA
 
 .date-card h3{
 
-    color:white;
-
-    font-size:70px;
-
-    margin:10px 0;
+    font-size:90px;
 
 }
 
