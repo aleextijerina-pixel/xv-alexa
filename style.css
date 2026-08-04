@@ -14,8 +14,9 @@ html{
 
 body{
 
-    font-family:'Cormorant Garamond',serif;
+    font-family:'Playfair Display', serif;
 
+}
     background:url("background.jpg") center center fixed;
     background-size:cover;
 
