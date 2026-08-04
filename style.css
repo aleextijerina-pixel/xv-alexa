@@ -1,20 +1,19 @@
-/*=====================================
-FUENTES Y VARIABLES
-=====================================*/
+/*==================================================
+GOOGLE FONTS
+==================================================*/
+
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Prata&family=Montserrat:wght@300;400;500;600&display=swap');
-:root{
 
-    --navy:#233a6b;
-    --card:rgba(78,91,128,.78);
-    --white:#ffffff;
-    --shadow:0 25px 60px rgba(0,0,0,.22);
-
-}
+/*==================================================
+RESET
+==================================================*/
 
 *{
 
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
 
 }
@@ -29,39 +28,57 @@ body{
 
     font-family:'Prata',serif;
 
-    color:#fff;
+    color:#ffffff;
 
-    background:url("background.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    background-attachment:fixed;
+    background:url("background.jpg") center center/cover no-repeat fixed;
 
     overflow-x:hidden;
 
 }
 
-/*=====================================
-FONDO
-=====================================*/
+/*==================================================
+VARIABLES
+==================================================*/
 
-#glitter{
+:root{
+
+    --navy:#233a6b;
+
+    --navy2:#304d84;
+
+    --glass:rgba(33,51,90,.72);
+
+    --white:#ffffff;
+
+    --shadow:0 25px 60px rgba(0,0,0,.28);
+
+}
+
+/*==================================================
+OVERLAY
+==================================================*/
+
+body::before{
+
+    content:"";
 
     position:fixed;
 
     inset:0;
 
-    pointer-events:none;
+    background:rgba(7,15,35,.28);
+
+    z-index:-1;
 
 }
 
-/*=====================================
-SOBRE
-=====================================*/
+/*==================================================
+PORTADA
+==================================================*/
 
 #cover{
+
+    width:100%;
 
     height:100vh;
 
@@ -71,6 +88,8 @@ SOBRE
 
     align-items:center;
 
+    position:relative;
+
 }
 
 .overlay{
@@ -79,11 +98,11 @@ SOBRE
 
     inset:0;
 
-    background:rgba(0,0,0,.10);
+    background:rgba(255,255,255,.03);
 
 }
 
-.envelope-container{
+.envelope-wrapper{
 
     position:relative;
 
@@ -93,13 +112,17 @@ SOBRE
 
 }
 
+/*==================================================
+SOBRE
+==================================================*/
+
 #envelope{
 
     position:relative;
 
-    width:320px;
+    width:360px;
 
-    height:220px;
+    height:250px;
 
     cursor:pointer;
 
@@ -113,7 +136,7 @@ SOBRE
 
 }
 
-.envelope{
+.envelope-back{
 
     position:absolute;
 
@@ -121,11 +144,9 @@ SOBRE
 
     width:100%;
 
-    height:150px;
+    height:180px;
 
-    background:#28457c;
-
-    clip-path:polygon(0 0,100% 0,100% 100%,0 100%);
+    background:var(--navy);
 
     border-radius:0 0 12px 12px;
 
@@ -133,7 +154,25 @@ SOBRE
 
 }
 
-.flap{
+.envelope-front{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+
+    height:180px;
+
+    background:var(--navy2);
+
+    clip-path:polygon(0 0,50% 60%,100% 0,100% 100%,0 100%);
+
+    border-radius:0 0 12px 12px;
+
+}
+
+.envelope-flap{
 
     position:absolute;
 
@@ -141,11 +180,11 @@ SOBRE
 
     width:100%;
 
-    height:160px;
+    height:180px;
 
-    background:#3d639b;
+    background:#496ba7;
 
-    clip-path:polygon(0 0,50% 75%,100% 0);
+    clip-path:polygon(0 0,50% 70%,100% 0);
 
     transform-origin:top;
 
@@ -161,17 +200,19 @@ SOBRE
 
     left:50%;
 
-    top:118px;
+    top:120px;
 
     transform:translateX(-50%);
 
-    width:70px;
+    width:72px;
 
-    height:70px;
+    height:72px;
 
     border-radius:50%;
 
-    background:#31548f;
+    background:#ffffff;
+
+    color:var(--navy);
 
     display:flex;
 
@@ -179,37 +220,40 @@ SOBRE
 
     align-items:center;
 
-    color:white;
+    font-family:'Prata',serif;
 
-    font-size:32px;
+    font-size:28px;
 
-    z-index:6;
+    font-weight:bold;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.20);
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+
+    z-index:10;
 
 }
 
 .open-text{
 
-    margin-top:40px;
+    margin-top:35px;
 
     font-family:'Montserrat',sans-serif;
 
-    color:white;
+    font-size:15px;
 
     letter-spacing:2px;
 
-}
+    color:white;
 
-/*=====================================
+}
+/*==================================================
 INVITACIÓN
-=====================================*/
+==================================================*/
 
 #invitation{
 
     display:none;
 
-    padding:70px 0;
+    padding:80px 0;
 
 }
 
@@ -219,141 +263,11 @@ INVITACIÓN
 
     margin:auto;
 
-    background:var(--card);
-
-    backdrop-filter:blur(18px);
-
-    border-radius:35px;
-
-    padding:70px;
-
-    box-shadow:var(--shadow);
-
-    border:1px solid rgba(255,255,255,.20);
-
 }
 
-.hero-content{
-
-    text-align:center;
-
-body{
-    font-family:'Prata', serif;
-}
-
-.hero h1,
-footer h2{
-    font-family:'Great Vibes', cursive;
-}
-
-.hero h2,
-.glass h2,
-.glass h3,
-.glass p,
-.hero p,
-.date-card h3,
-.date-card h4{
-    font-family:'Prata', serif;
-}
-
-.hero h5,
-.btn,
-.open-text,
-.parents p,
-.countdown small{
-    font-family:'Montserrat', sans-serif;
-}
-
-.hero-line{
-
-    width:160px;
-
-    height:2px;
-
-    background:white;
-
-    margin:35px auto;
-
-    opacity:.8;
-
-}
-
-.hero p{
-
-    max-width:900px;
-
-    margin:40px auto;
-
-    font-size:32px;
-
-    line-height:1.8;
-
-    color:white;
-
-}
-
-.date-card{
-
-    width:280px;
-
-    margin:50px auto;
-
-    padding:35px;
-
-    border-radius:25px;
-
-    background:rgba(255,255,255,.18);
-
-}
-
-.date-card h3{
-
-    font-size:90px;
-
-    color:white;
-
-}
-
-.date-card h4{
-
-    font-size:28px;
-
-    color:white;
-
-}
-
-.btn{
-
-    padding:18px 45px;
-
-    border:none;
-
-    border-radius:50px;
-
-    background:#233a6b;
-
-    color:white;
-
-    font-family:'Montserrat',sans-serif;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.btn:hover{
-
-    background:#31518f;
-
-    transform:translateY(-3px);
-
-}
-/*=====================================
-SECCIONES
-=====================================*/
+/*==================================================
+TARJETAS
+==================================================*/
 
 .glass{
 
@@ -363,17 +277,81 @@ SECCIONES
 
     padding:70px;
 
-    border-radius:35px;
-
-    background:rgba(78,91,128,.78);
+    background:var(--glass);
 
     backdrop-filter:blur(18px);
 
+    -webkit-backdrop-filter:blur(18px);
+
     border:1px solid rgba(255,255,255,.18);
 
-    box-shadow:0 25px 60px rgba(0,0,0,.18);
+    border-radius:35px;
+
+    box-shadow:var(--shadow);
 
     text-align:center;
+
+}
+
+/*==================================================
+TIPOGRAFÍAS
+==================================================*/
+
+.hero h5{
+
+    font-family:'Montserrat',sans-serif;
+
+    letter-spacing:10px;
+
+    font-size:18px;
+
+    font-weight:500;
+
+    color:#ffffff;
+
+}
+
+.hero h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:190px;
+
+    line-height:.85;
+
+    color:#ffffff;
+
+    margin:10px 0;
+
+    text-shadow:0 8px 18px rgba(0,0,0,.20);
+
+}
+
+.hero h2{
+
+    font-family:'Prata',serif;
+
+    font-size:54px;
+
+    font-weight:400;
+
+    color:#ffffff;
+
+    margin-top:5px;
+
+}
+
+.hero p{
+
+    max-width:760px;
+
+    margin:35px auto;
+
+    font-size:28px;
+
+    line-height:1.8;
+
+    color:#ffffff;
 
 }
 
@@ -383,9 +361,7 @@ SECCIONES
 
     font-size:70px;
 
-    color:white;
-
-    margin-bottom:15px;
+    color:#ffffff;
 
 }
 
@@ -393,25 +369,31 @@ SECCIONES
 
     font-family:'Prata',serif;
 
-    font-size:42px;
+    font-size:36px;
 
     font-weight:400;
 
-    color:white;
+    color:#ffffff;
 
-    margin-bottom:20px;
+    margin:20px 0;
 
 }
 
 .glass p{
 
-    font-size:28px;
+    font-family:'Prata',serif;
 
-    line-height:1.8;
+    font-size:24px;
 
-    color:white;
+    line-height:1.9;
+
+    color:#ffffff;
 
 }
+
+/*==================================================
+DIVISOR
+==================================================*/
 
 .divider{
 
@@ -419,20 +401,101 @@ SECCIONES
 
     height:2px;
 
-    background:rgba(255,255,255,.75);
+    margin:35px auto;
 
-    margin:30px auto;
+    background:rgba(255,255,255,.80);
 
 }
-/*=====================================
+
+/*==================================================
+FECHA
+==================================================*/
+
+.date-card{
+
+    width:260px;
+
+    margin:45px auto;
+
+    padding:35px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.15);
+
+    border:1px solid rgba(255,255,255,.18);
+
+}
+
+.date-card h3{
+
+    font-size:88px;
+
+    color:#ffffff;
+
+}
+
+.date-card h4,
+
+.date-card h5{
+
+    font-family:'Montserrat',sans-serif;
+
+    color:#ffffff;
+
+    font-size:18px;
+
+}
+
+/*==================================================
+BOTONES
+==================================================*/
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:18px 46px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#233a6b;
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.btn:hover{
+
+    background:#31518f;
+
+    transform:translateY(-4px);
+
+}
+
+/*==================================================
 PADRES
-=====================================*/
+==================================================*/
 
 .parents{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
     gap:30px;
 
@@ -440,32 +503,33 @@ PADRES
 
 }
 
-.parents div{
+.parent-card{
 
     padding:35px;
 
     border-radius:25px;
 
-    background:rgba(255,255,255,.10);
+    background:rgba(255,255,255,.08);
 
     border:1px solid rgba(255,255,255,.15);
 
 }
 
-.parents p{
-
-    margin-top:10px;
+.parent-card p{
 
     font-family:'Montserrat',sans-serif;
 
-    font-size:18px;
+    margin-top:10px;
 
     letter-spacing:3px;
 
+    font-size:16px;
+
 }
-/*=====================================
+
+/*==================================================
 CONTADOR
-=====================================*/
+==================================================*/
 
 .countdown{
 
@@ -493,11 +557,11 @@ CONTADOR
 
     display:block;
 
-    font-size:65px;
+    font-size:60px;
+
+    color:#ffffff;
 
     font-weight:bold;
-
-    color:white;
 
 }
 
@@ -505,14 +569,14 @@ CONTADOR
 
     font-family:'Montserrat',sans-serif;
 
-    color:white;
+    color:#ffffff;
 
     letter-spacing:2px;
 
 }
-/*=====================================
+/*==================================================
 FOOTER
-=====================================*/
+==================================================*/
 
 footer{
 
@@ -524,9 +588,11 @@ footer{
 
 footer p{
 
-    font-size:26px;
+    font-family:'Prata',serif;
 
-    color:white;
+    font-size:24px;
+
+    color:#ffffff;
 
     margin-bottom:20px;
 
@@ -538,43 +604,427 @@ footer h2{
 
     font-size:90px;
 
-    color:white;
-
-}
-/*=====================================
-TIPOGRAFÍAS
-=====================================*/
-
-body{
-
-    font-family:'Prata', serif;
+    color:#ffffff;
 
 }
 
-.hero h1,
+/*==================================================
+ANIMACIÓN SOBRE
+==================================================*/
+
+#cover.open .envelope-flap{
+
+    transform:rotateX(180deg);
+
+}
+
+#cover.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:opacity .8s ease;
+
+}
+
+/*==================================================
+ANIMACIÓN INVITACIÓN
+==================================================*/
+
+#invitation{
+
+    display:none;
+
+    opacity:0;
+
+    transition:opacity 1s ease;
+
+}
+
+#invitation.show{
+
+    display:block;
+
+    opacity:1;
+
+}
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media (max-width:900px){
+
+.hero h1{
+
+    font-size:135px;
+
+}
+
+.hero h2{
+
+    font-size:40px;
+
+}
+
+.hero p{
+
+    font-size:22px;
+
+}
+
+.glass{
+
+    padding:45px 30px;
+
+}
+
+.countdown{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media (max-width:600px){
+
+#envelope{
+
+    width:300px;
+
+    height:210px;
+
+}
+
+.envelope-back,
+.envelope-front{
+
+    height:150px;
+
+}
+
+.envelope-flap{
+
+    height:150px;
+
+}
+
+.seal{
+
+    top:100px;
+
+    width:60px;
+
+    height:60px;
+
+    font-size:22px;
+
+}
+
+.hero h1{
+
+    font-size:100px;
+
+}
+
+.hero h2{
+
+    font-size:32px;
+
+}
+
+.hero p{
+
+    font-size:19px;
+
+    line-height:1.7;
+
+}
+
+.glass h2{
+
+    font-size:54px;
+
+}
+
+.glass h3{
+
+    font-size:28px;
+
+}
+
+.glass p{
+
+    font-size:20px;
+
+}
+
+.date-card{
+
+    width:220px;
+
+    padding:25px;
+
+}
+
+.date-card h3{
+
+    font-size:70px;
+
+}
+
+.btn{
+
+    width:100%;
+
+    padding:16px;
+
+}
+
+.countdown{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+.countdown span{
+
+    font-size:42px;
+
+}
+
 footer h2{
 
-    font-family:'Great Vibes', cursive !important;
+    font-size:70px;
+
+}
+/*==================================================
+FOOTER
+==================================================*/
+
+footer{
+
+    text-align:center;
+
+    padding:90px 20px;
 
 }
 
-.hero h2,
-.glass h2,
-.glass h3,
-.glass p,
-.date-card h3,
-.date-card h4{
+footer p{
 
-    font-family:'Prata', serif !important;
+    font-family:'Prata',serif;
+
+    font-size:24px;
+
+    color:#ffffff;
+
+    margin-bottom:20px;
 
 }
 
-.hero h5,
-.open-text,
-.btn,
-.parents p,
-.countdown small{
+footer h2{
 
-    font-family:'Montserrat', sans-serif !important;
+    font-family:'Great Vibes',cursive;
+
+    font-size:90px;
+
+    color:#ffffff;
+
+}
+
+/*==================================================
+ANIMACIÓN SOBRE
+==================================================*/
+
+#cover.open .envelope-flap{
+
+    transform:rotateX(180deg);
+
+}
+
+#cover.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:opacity .8s ease;
+
+}
+
+/*==================================================
+ANIMACIÓN INVITACIÓN
+==================================================*/
+
+#invitation{
+
+    display:none;
+
+    opacity:0;
+
+    transition:opacity 1s ease;
+
+}
+
+#invitation.show{
+
+    display:block;
+
+    opacity:1;
+
+}
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media (max-width:900px){
+
+.hero h1{
+
+    font-size:135px;
+
+}
+
+.hero h2{
+
+    font-size:40px;
+
+}
+
+.hero p{
+
+    font-size:22px;
+
+}
+
+.glass{
+
+    padding:45px 30px;
+
+}
+
+.countdown{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media (max-width:600px){
+
+#envelope{
+
+    width:300px;
+
+    height:210px;
+
+}
+
+.envelope-back,
+.envelope-front{
+
+    height:150px;
+
+}
+
+.envelope-flap{
+
+    height:150px;
+
+}
+
+.seal{
+
+    top:100px;
+
+    width:60px;
+
+    height:60px;
+
+    font-size:22px;
+
+}
+
+.hero h1{
+
+    font-size:100px;
+
+}
+
+.hero h2{
+
+    font-size:32px;
+
+}
+
+.hero p{
+
+    font-size:19px;
+
+    line-height:1.7;
+
+}
+
+.glass h2{
+
+    font-size:54px;
+
+}
+
+.glass h3{
+
+    font-size:28px;
+
+}
+
+.glass p{
+
+    font-size:20px;
+
+}
+
+.date-card{
+
+    width:220px;
+
+    padding:25px;
+
+}
+
+.date-card h3{
+
+    font-size:70px;
+
+}
+
+.btn{
+
+    width:100%;
+
+    padding:16px;
+
+}
+
+.countdown{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+.countdown span{
+
+    font-size:42px;
+
+}
+
+footer h2{
+
+    font-size:70px;
+
+}
 
 }
