@@ -1,7 +1,7 @@
 /*=====================================
 FUENTES Y VARIABLES
 =====================================*/
-
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Prata&family=Montserrat:wght@300;400;500;600&display=swap');
 :root{
 
     --navy:#233a6b;
@@ -237,46 +237,31 @@ INVITACIÓN
 
     text-align:center;
 
+body{
+    font-family:'Prata', serif;
 }
 
-.hero h5{
-
-    font-family:'Montserrat',sans-serif;
-
-    letter-spacing:8px;
-
-    color:white;
-
-    font-size:20px;
-
-    margin-bottom:20px;
-
+.hero h1,
+footer h2{
+    font-family:'Great Vibes', cursive;
 }
 
-.hero h1{
-
-    font-family:'Great Vibes',cursive;
-
-    font-size:220px;
-
-    line-height:.9;
-
-    color:white;
-
-    text-shadow:0 4px 15px rgba(0,0,0,.18);
-
+.hero h2,
+.glass h2,
+.glass h3,
+.glass p,
+.hero p,
+.date-card h3,
+.date-card h4{
+    font-family:'Prata', serif;
 }
 
-.hero h2{
-
-    font-size:70px;
-
-    font-weight:400;
-
-    color:white;
-
-    margin-top:-20px;
-
+.hero h5,
+.btn,
+.open-text,
+.parents p,
+.countdown small{
+    font-family:'Montserrat', sans-serif;
 }
 
 .hero-line{
