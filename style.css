@@ -556,3 +556,40 @@ footer h2{
     color:white;
 
 }
+/*=====================================
+TIPOGRAFÍAS
+=====================================*/
+
+body{
+
+    font-family:'Playfair Display', serif;
+
+}
+
+.hero h1,
+footer h2{
+
+    font-family:'Great Vibes', cursive !important;
+
+}
+
+.hero h2,
+.glass h2,
+.glass h3,
+.glass p,
+.date-card h3,
+.date-card h4{
+
+    font-family:'Playfair Display', serif !important;
+
+}
+
+.hero h5,
+.open-text,
+.btn,
+.parents p,
+.countdown small{
+
+    font-family:'Montserrat', sans-serif !important;
+
+}
