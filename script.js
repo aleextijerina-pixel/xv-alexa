@@ -1,71 +1,69 @@
-// ==============================
+//==================================================
 // ELEMENTOS
-// ==============================
+//==================================================
 
 const cover = document.getElementById("cover");
 const envelope = document.getElementById("envelope");
-const flap = document.querySelector(".flap");
-
 const invitation = document.getElementById("invitation");
+
+const flap = document.querySelector(".envelope-flap");
 
 const music = document.getElementById("music");
 const musicButton = document.getElementById("musicButton");
 
-// ==============================
+//==================================================
 // ABRIR SOBRE
-// ==============================
+//==================================================
 
 envelope.addEventListener("click", () => {
 
-    // abre la tapa
-    flap.style.transform = "rotateX(180deg)";
+    cover.classList.add("open");
 
-    // espera la animación
     setTimeout(() => {
 
         cover.style.display = "none";
 
         invitation.style.display = "block";
 
-        // intenta reproducir la música
-        music.play().then(() => {
+        setTimeout(() => {
 
-            musicButton.innerHTML = "⏸ Pausar música";
+            invitation.classList.add("show");
 
-        }).catch(() => {
+        },50);
 
-            musicButton.innerHTML = "▶ Reproducir música";
+        music.play().catch(()=>{});
 
-        });
+        musicButton.innerHTML="⏸ Pausar música";
 
-    }, 900);
+    },900);
 
 });
 
-// ==============================
-// BOTÓN DE MÚSICA
-// ==============================
+//==================================================
+// BOTÓN MÚSICA
+//==================================================
 
-musicButton.addEventListener("click", () => {
+musicButton.addEventListener("click",()=>{
 
-    if (music.paused) {
+    if(music.paused){
 
         music.play();
 
-        musicButton.innerHTML = "⏸ Pausar música";
+        musicButton.innerHTML="⏸ Pausar música";
 
-    } else {
+    }else{
 
         music.pause();
 
-        musicButton.innerHTML = "▶ Reproducir música";
+        musicButton.innerHTML="🎵 Reproducir música";
 
     }
 
 });
-// ==============================
+
+//==================================================
 // CUENTA REGRESIVA
-// ==============================
+//==================================================
 
 const eventDate = new Date("2026-09-18T17:30:00").getTime();
 
@@ -73,47 +71,34 @@ function updateCountdown(){
 
     const now = new Date().getTime();
 
-    const distance = eventDate - now;
+    const distance = eventDate-now;
 
-    if(distance <= 0){
+    if(distance<=0){
 
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
+        document.getElementById("days").textContent="00";
+        document.getElementById("hours").textContent="00";
+        document.getElementById("minutes").textContent="00";
+        document.getElementById("seconds").textContent="00";
 
         return;
 
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const days=Math.floor(distance/(1000*60*60*24));
 
-    const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
-    );
+    const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
 
-    const minutes = Math.floor(
-        (distance % (1000 * 60 * 60)) /
-        (1000 * 60)
-    );
+    const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
 
-    const seconds = Math.floor(
-        (distance % (1000 * 60)) /
-        1000
-    );
+    const seconds=Math.floor((distance%(1000*60))/1000);
 
-    document.getElementById("days").textContent =
-        String(days).padStart(2,"0");
+    document.getElementById("days").textContent=String(days).padStart(2,"0");
 
-    document.getElementById("hours").textContent =
-        String(hours).padStart(2,"0");
+    document.getElementById("hours").textContent=String(hours).padStart(2,"0");
 
-    document.getElementById("minutes").textContent =
-        String(minutes).padStart(2,"0");
+    document.getElementById("minutes").textContent=String(minutes).padStart(2,"0");
 
-    document.getElementById("seconds").textContent =
-        String(seconds).padStart(2,"0");
+    document.getElementById("seconds").textContent=String(seconds).padStart(2,"0");
 
 }
 
