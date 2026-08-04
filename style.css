@@ -384,22 +384,13 @@ TIPOGRAFÍA
         0 8px 20px rgba(0,0,0,.18);
 
 }
-
 .hero h2{
 
-    font-family:'Cormorant Garamond', serif;
+    font-family:'Playfair Display', serif;
 
     font-size:58px;
 
-    font-weight:400;
-
-    color:#ffffff;
-
-    letter-spacing:1px;
-
-    margin-top:-20px;
-
-    margin-bottom:45px;
+    color:#fff;
 
 }
 
@@ -528,16 +519,9 @@ SECCIONES
     margin:70px auto;
 
 }
-
 .glass h2{
 
-    font-family:'Great Vibes',cursive;
-
-    font-size:70px;
-
-    color:white;
-
-    margin-bottom:20px;
+    font-family:'Playfair Display', serif;
 
 }
 
